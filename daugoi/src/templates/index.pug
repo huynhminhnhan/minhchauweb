@@ -1,0 +1,160 @@
+extends _layout/layout
+
+//- Các giá trị mặc định cho trang web
+block variables
+	- var title = 'Home'
+	- var description = 'Description for home page'
+	- var bodyclass = 'home'
+
+//- Phần khai báo body
+block body
+	//- Bạn viết code vào đây nhớ là phải mở đầu bằng section ở mỗi khối
+	section.home-slider
+		.bxslider
+			- for(x=1;x<4;x++)
+				.itembx
+					img(src="img/home_banner_1.png", alt="banner_1")
+	section.home-about
+		.container
+			.row
+				.col-sm-4.offset-1
+					.h-about-img.ml-5
+						figure
+							img.img-fluid(src="img/home_about_1.png", alt="")
+				.col-sm-6
+					.h-about-intro
+						.ab-title.mb-3
+							h3 giới thiệu dầu gội bia
+						.h-about-des
+							p
+							| Bạn thường mất thêm 2-4% khi mua sắm online, du lịch quốc tế?. Thẻ Tín     dụng OCB Passport Platinum ra đời để giúp bạn mua sắm tiết kiệm hơn
+	section.home-product
+		.container
+			hr
+			.row.al_item
+				.col-sm-4.offset-1
+					.home-product-menu.ml-5
+						.h-pr-newproduct.fl-left
+							h3 Sản Phẩm Mới
+				.col-sm-6
+					.h-pr-menupr.fl-right
+						ul#myTab.nav.nav-tabs(role='tablist')
+							li.nav-item
+								a#home-tab.nav-link.active(data-toggle='tab', href='#home', role='tab', aria-controls='home', aria-selected='true') Dầu Gội Bia
+							li.nav-item
+								a#profile-tab.nav-link(data-toggle='tab', href='#profile', role='tab', aria-controls='profile', aria-selected='false') Dầu Nhân Sâm
+							li.nav-item
+								a#contact-tab.nav-link(data-toggle='tab', href='#contact', role='tab', aria-controls='contact', aria-selected='false') Dầu Gội Bưởi
+							li.nav-item
+								a#duatab.nav-link(data-toggle='tab', href='#dua', role='tab', aria-controls='dua', aria-selected='false') Dầu Gội Dừa
+			
+			hr
+			.row
+				.col-sm-10.offset-2.mt-3
+					#myTabContent.tab-content
+						#home.tab-pane.fade.show.active(role='tabpanel', aria-labelledby='home-tab')
+							.row
+								.col-sm-3
+									.h_product_img_news
+										figure
+											img.img-fluid(src="img/home_product_bia.png", alt="")
+								.col-sm-8.offset-1
+									.h_product_news.mb-5.mt-5
+										h2 Dầu Gội Bia
+									.des_bia.mb-3
+										h5 Beaujella Barley Beer Shampoo
+										b.price.mb-4 599.000 VNĐ
+									.des_bia
+										h5 Beaujella Barley Beer Shampoo
+										b.price 599.000 VNĐ
+
+						#profile.tab-pane.fade(role='tabpanel', aria-labelledby='profile-tab')
+							.row
+								.col-sm-3
+									.h_product_img_news
+										figure
+											img.img-fluid(src="img/home_product_3.png", alt="")
+								.col-sm-8.offset-1
+									.h_product_news.mb-5.mt-5
+										h2 Dầu Gội Nhân Sâm
+									.des_bia.mb-3
+										h5 Beaujella Barley Beer Shampoo
+										b.price.mb-4 599.000 VNĐ
+									.des_bia
+										h5 Beaujella Barley Beer Shampoo
+										b.price 599.000 VNĐ
+						#contact.tab-pane.fade(role='tabpanel', aria-labelledby='contact-tab') 
+							.row
+								.col-sm-3
+									.h_product_img_news
+										figure
+											img.img-fluid(src="img/home_product_4.png", alt="")
+								.col-sm-8.offset-1
+									.h_product_news.mb-5.mt-5
+										h2 Dầu Gội Bưởi
+									.des_bia.mb-3
+										h5 Beaujella Barley Beer Shampoo
+										b.price.mb-4 599.000 VNĐ
+									.des_bia
+										h5 Beaujella Barley Beer Shampoo
+										b.price 599.000 VNĐ
+						#dua.tab-pane.fade(role='tabpanel', aria-labelledby='dua-tab') 
+							.row
+								.col-sm-3
+									.h_product_img_news
+										figure
+											img.img-fluid(src="img/home_product_5.png", alt="")
+								.col-sm-8.offset-1
+									.h_product_news
+										.h_product_news.mb-5.mt-5
+										h2 Dầu Gội Dừa
+									.des_bia.mb-3
+										h5 Beaujella Barley Beer Shampoo
+										b.price.mb-4 599.000 VNĐ
+									.des_bia
+										h5 Beaujella Barley Beer Shampoo
+										b.price 599.000 VNĐ
+			.row
+				#slider.h-product-slider.owl-carousel.owl-theme
+					.h-pr-box
+						.item
+							figure
+								img.img-responsive(src="img/home_product_4.png", alt="product_1")
+								figcaption
+						.h-product-des
+							h5 Dầu Gội Nhân Sâm
+						.h-product-price
+							b 559.000 Vnđ
+					.h-pr-box
+						.item
+							figure
+								img.img-responsive(src="img/home_product_4.png", alt="product_1")
+								figcaption
+						.h-product-des
+							h5 Dầu Gội Nhân Sâm
+						.h-product-price
+							b 559.000 Vnđ
+					.h-pr-box
+						.item
+							figure
+								img.img-responsive(src="img/home_product_4.png", alt="product_1")
+								figcaption
+						.h-product-des
+							h5 Dầu Gội Nhân Sâm
+						.h-product-price
+							b 559.000 Vnđ
+					.h-pr-box
+						.item
+							figure
+								img.img-responsive(src="img/home_product_4.png", alt="product_1")
+								figcaption
+						.h-product-des
+							h5 Dầu Gội Nhân Sâm
+						.h-product-price
+							b 559.000 Vnđ
+
+			
+										
+						
+
+				
